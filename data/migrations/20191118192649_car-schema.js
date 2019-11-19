@@ -1,4 +1,4 @@
-// implement changes
+// implement changes -- npx knex migrate:latest
 exports.up = function(knex) {
   knex.schema.createTable('cars', table => {
     table.increments('id')
@@ -17,7 +17,7 @@ exports.up = function(knex) {
   })
 }
 
-// rollback
+// rollback -- npx knex migrate:rollback
 exports.down = function(knex) {
   return knex.schema.dropTableIfExists('cars')
 }
